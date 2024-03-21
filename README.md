@@ -26,7 +26,7 @@ List the features of your project.
 
 Include screenshots or images of your project in action. You can add them like this:
 
-![Screenshot 1](images/autocorrelation.png)
+![Screenshot 1](Images/Autocorrelation.png)
 
 ## Contributing
 
