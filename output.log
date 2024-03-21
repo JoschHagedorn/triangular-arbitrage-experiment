@@ -1,0 +1,36 @@
+nohup: ignoring input
+Exchange Info done
+Need to listen to 1147 symbols
+Watching 1610 chains
+Generating chains done
+Getting fees done
+Initializing orderbook done
+Watching market data
+/home/ec2-user/miniconda3/envs/trading/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/ec2-user/miniconda3/envs/trading/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Main task was cancelled
+main task cancelled
+Cancel in progress set to True
+Cancel in progress set to True
+Cancel in progress set to True
+Cancel in progress set to True
+Cancel in progress set to True
+Cancel in progress set to True
+Cancel in progress set to True
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+CANCEL read_loop
+Starting cleanup...
+Connections closed
+Cleanup done

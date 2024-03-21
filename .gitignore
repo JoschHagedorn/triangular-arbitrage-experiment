@@ -1,3 +1,4 @@
 config_testnet.py
 config.py
 data.db
+__pycache__/
