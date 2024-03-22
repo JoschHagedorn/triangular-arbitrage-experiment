@@ -46,16 +46,15 @@ The base asset is the starting and ending currency in a triangular arbitrage cha
 The base asset quantity is the amount of the base asset that is used for the execution of a triangular arbitrage chain. It plays an important role in determining the duration of an opportunity. When an opportunity begins, it is the moment when the limit prices become immediately executable, based on the best bid/ask prices in the limit order book and their quantities. The base asset quantity defines the minimum quantity of the base asset required for the opportunity to be executable.
 
 **Profit:** \
-The profit of a chain is the relative difference between the base asset quantity before and after the execution of a chain given in percent. 
-\[
-\text{Profit (\%)} = \left( \frac{B_{\text{after}} - B_{\text{before}} - \text{Fees}}{B_{\text{before}}} \right) \times 100
-\]
+The profit of a chain is the relative difference between the base asset quantity before and after the execution of a chain, expressed as a percentage. 
+The formula for calculating profit is: 
+$$\text{Profit} ( \\% ) = \left( \frac{B_{\text{after}} - B_{\text{before}} - \text{Fees}}{B_{\text{before}}} \right) \times 100$$
 
 Where:
-- \(B_{\text{before}}\) is the base asset amount before the execution of the chain.
-- \(B_{\text{after}}\) is the base asset amount after the execution of the chain.
-- \text{Fees} is the accumulated fees.
-It is dependent on the base asset quantity as the execution of a chain is not a linear opperation. 
+- $B_{\text{before}}$ is the base asset amount before the execution of the chain.
+- $B_{\text{after}}$ is the base asset amount after the execution of the chain.
+- $\text{Fees}$ is the accumulated fees.
+The profit calculation takes into account any fees incurred during the execution of the chain. It's important to note that the profit is dependent on the base asset quantity, as the execution of a chain is not a linear operation. This is mainly due to the finite precision and resulting rounding of order quantities.
 
 ## Features
 
