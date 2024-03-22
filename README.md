@@ -39,11 +39,23 @@ A triangular arbitrage chain, or simply a "chain," refers to a sequence of three
 **Triangular arbitrage opportunity or opportunity:** \
 A triangular arbitrage opportunity, or simply an "opportunity," is defined as a chain and a set of limit prices that allow the execution of the chain to yield a return greater than zero. The duration of an opportunity is the time between when the limit prices become immediately executable, given the best bid/ask prices in the limit order book and their quantities, and when the best prices in the limit order book have crossed the limit prices of the opportunity.
 
-**Base asset:**
+**Base asset:** \
 The base asset is the starting and ending currency in a triangular arbitrage chain. It is the currency that is initially held, exchanged for other currencies in the chain, and then ultimately exchanged back to at the end of the chain. The base asset determines the direction of the triangular arbitrage trades and is used to calculate the profit of an arbitrage opportunity.
 
-**Base asset quantity:**
+**Base asset quantity:** \
 The base asset quantity is the amount of the base asset that is used for the execution of a triangular arbitrage chain. It plays an important role in determining the duration of an opportunity. When an opportunity begins, it is the moment when the limit prices become immediately executable, based on the best bid/ask prices in the limit order book and their quantities. The base asset quantity defines the minimum quantity of the base asset required for the opportunity to be executable.
+
+**Profit:** \
+The profit of a chain is the relative difference between the base asset quantity before and after the execution of a chain given in percent. 
+\[
+\text{Profit (\%)} = \left( \frac{B_{\text{after}} - B_{\text{before}} - \text{Fees}}{B_{\text{before}}} \right) \times 100
+\]
+
+Where:
+- \(B_{\text{before}}\) is the base asset amount before the execution of the chain.
+- \(B_{\text{after}}\) is the base asset amount after the execution of the chain.
+- \text{Fees} is the accumulated fees.
+It is dependent on the base asset quantity as the execution of a chain is not a linear opperation. 
 
 ## Features
 
