@@ -26,11 +26,24 @@ Triangular arbitrage helps to maintain efficient pricing in the market by quickl
 
 This section provides important definitions and assumptions made in this project.
 
+**Symbol:** \
+In the context of this project, a symbol refers to a trading pair on the Binance exchange, consisting of two (crypto-) currencies (e.g., BTC/ETH, LTC/BTC). Each symbol represents the exchange rate between the two (crypto-) currencies in the pair.
+
+
 **Triangular arbitrage chain or chain:** \
+A triangular arbitrage chain, or simply a "chain," refers to a sequence of three symbols that can form a triangular arbitrage opportunity. For example, if we have symbols A/B, B/C, and C/A, this forms a triangular arbitrage chain. Executing a triangular arbitrage chain, starting with a base asset (e.g., currency A), involves the following steps:
+1. Buy currency B using the A/B symbol.
+2. Buy currency C using the B/C symbol.
+3. Sell currency C for currency A using the C/A symbol.
 
 **Triangular arbitrage opportunity or opportunity:** \
-A triangular arbitrage opportunity or just opportunity is defined as a set of limit prices 
+A triangular arbitrage opportunity, or simply an "opportunity," is defined as a chain and a set of limit prices that allow the execution of the chain to yield a return greater than zero. The duration of an opportunity is the time between when the limit prices become immediately executable, given the best bid/ask prices in the limit order book and their quantities, and when the best prices in the limit order book have crossed the limit prices of the opportunity.
 
+**Base asset:**
+The base asset is the starting and ending currency in a triangular arbitrage chain. It is the currency that is initially held, exchanged for other currencies in the chain, and then ultimately exchanged back to at the end of the chain. The base asset determines the direction of the triangular arbitrage trades and is used to calculate the profit of an arbitrage opportunity.
+
+**Base asset quantity:**
+The base asset quantity is a crucial factor in determining the duration of a triangular arbitrage opportunity. When an opportunity begins, it is the moment when the limit prices become immediately executable, based on the best bid/ask prices in the limit order book and their quantities. The base asset quantity defines the minimum quantity of the best bid/ask prices required for the opportunity to be executable.
 
 ## Features
 
