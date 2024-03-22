@@ -12,9 +12,7 @@ This project is for educational and research purposes only. Any trading decision
 - [Triangular Arbitrage](#triangular-arbitrage)
 - [Definitions](#definitions)
 - [Features](#features)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+- [Data Analysis](#data-analysis)
 
 ## Triangular Arbitrage
 
@@ -72,16 +70,14 @@ In the context of this project, a trajectory refers to a series of data points t
 - **Logging and Monitoring:** Providing logging and monitoring capabilities to track the performance and detect any potential issues.
 
 
-## Screenshots
+## Data Analysis
 
-Include screenshots or images of your project in action. You can add them like this:
+The data discussed in this sections was collected using a server that was strategically located to minimize latency and ensure close proximity to the servers used by Binance. Doing so, the time required to execute a full triangular arbitrage chain (comprising sending the order to Binance, waiting for Binance to match the order, and receiving confirmation of a filled order) three times was significantly reduced. The optimized setup reduced the total execution time to approximately 0.03 seconds, ensuring timely and efficient execution of arbitrage opportunities.
+
+The data was collected during a roughly 24 hour period between March 13th, 2024 and March 14th, 2024. As a single base asset Tether (USDT) was used. The chosen quantity was 50 USDT.
+
+During this period more than 250 Thousand arbitrage opportunites were recorded. The mean duration of those opportunities was about 0.44 seconds and the median duration was about 0.057 seconds. The longest recorded opportunity lasted about 73 seconds while the shortest lasted just about 76 micro seconds. The mean profit of the recorded opportunities was about 0.19% and the median profit was about 0.11%. The highest recorded profit was about 29% and the smallest just about 14 × 10⁻¹⁵%.
+
+
 
 ![Screenshot 1](Images/Autocorrelation.png)
-
-## Contributing
-
-If you're open to contributions, provide guidelines for how others can contribute to your project.
-
-## License
-
-Specify the license for your project, if applicable.
