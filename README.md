@@ -82,9 +82,15 @@ Figures 1 - 4 visualize the relationship between the duration of triangular arbi
 
 | Raw | Outliers removed |
 | :---: | :---: |
-| Figure 1 | Figure 2 |
+| **Figure 1** | **Figure 2** |
 | ![Figure 1](Images/Scatter_DurationVprofits.png) | ![Figure 2](Images/Scatter_DurationVprofitsOutliers.png) |
-| Figure 3 | Figure 4 |
+| **Figure 3** | **Figure 4** |
 | ![Figure 3](Images/Scatter_DurationVprofitsLog.png) | ![Figure 4](Images/Scatter_DurationVprofitsLogOutliers.png) |
 
-Each chain can be identified by a unique name. For that the involved symbols in the order they are traded are used. 
+Figure 5 presents a histogram that illustrates the distribution of triangular arbitrage opportunities across the top 20 chains out of all possible chains explored during the data collection period. The x-axis labels each of the top 20 chains by their rank, and the remaining chains are grouped under the label "21-1610," indicating that the remaining chains are included in this group. The y-axis represents the number of arbitrage opportunities detected for each chain. This visualization serves to highlight that specific chains yielded far more frequent opportunities for triangular arbitrage within the observed time frame than other chains.
+
+Figure 6, similarly, displays a histogram categorizing the number of triangular arbitrage opportunities among the top 20 symbols and aggregates the rest under the label "21-1147," representing the remaining symbols. The histogram ranks these symbols based on the frequency of arbitrage opportunities identified, offering insight into which currency pairs presented the most potential for profitable triangular arbitrage transactions. Given the distribution of opportunities across the chains it is no surprise that specific symbols yielded far more freqent opportunities for triangular arbitrage than other symbols.
+
+| Figure 5 | Figure 6 |
+| :---: | :---: |
+| ![Figure 1](Images/TopChains.png) | ![Figure 2](Images/TopSymbols.png) |
