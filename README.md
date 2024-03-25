@@ -78,7 +78,9 @@ The data was collected during a roughly 24 hour period between March 13th, 2024 
 
 During this period more than 250 Thousand arbitrage opportunites were recorded. The mean duration of those opportunities was about 0.44 seconds and the median duration was about 0.057 seconds. The longest recorded opportunity lasted about 73 seconds while the shortest lasted just about 76 micro seconds. The mean profit of the recorded opportunities was about 0.19% and the median profit was about 0.11%. The highest recorded profit was about 29% and the smallest just about 14 × 10⁻¹⁵%.
 
+[Figures 1 - 4](Figure-1) visualize the relationship between the duration of triangular arbitrage opportunities and the profits they yield, measured in percentage. Each dot represents an arbitrage opportunity, plotted with the duration on the x-axis (in seconds) and the profit on the y-axis.
+
 | Raw | Outliers removed |
 | --- | --- |
-| ![Image 1](Images/Scatter_DurationVprofits.png) | ![Image 2](Images/Scatter_DurationVprofitsOutliers.png) |
-| ![Image 3](Images/Scatter_DurationVprofitsLog.png) | ![Image 4](Images/Scatter_DurationVprofitsLogOutliers.png) |
+| ![Figure 1](Images/Scatter_DurationVprofits.png) | ![Figure 2](Images/Scatter_DurationVprofitsOutliers.png) |
+| ![Figure 3](Images/Scatter_DurationVprofitsLog.png) | ![Figure 4](Images/Scatter_DurationVprofitsLogOutliers.png) |
