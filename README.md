@@ -91,6 +91,31 @@ Figure 5 presents a histogram that illustrates the distribution of triangular ar
 
 Figure 6, similarly, displays a histogram categorizing the number of triangular arbitrage opportunities among the top 20 symbols and aggregates the rest under the label "21-1147," representing the remaining symbols. The histogram ranks these symbols based on the frequency of arbitrage opportunities identified, offering insight into which currency pairs presented the most potential for profitable triangular arbitrage transactions. Given the distribution of opportunities across the chains it is no surprise that specific symbols yielded far more freqent opportunities for triangular arbitrage than other symbols.
 
+Figures 5 and 6 help validating the collected data. If there was a systematic error in the way the triangular arbitrage opportunities are measured, one would expect the distribution of chains and symbols among the opportunities to be more or less random. Considering the histograms that is clearly not the case. Looking at the table listing the chains and symbols with the most opportunities  
+
 | Figure 5 | Figure 6 |
 | :---: | :---: |
 | ![Figure 1](Images/TopChains.png) | ![Figure 2](Images/TopSymbols.png) |
+
+| | Chains with most opportunities | Symbols with most opportunities (Rank compared to volume| Symbols with highest volume |
+| :---: | :---: | :---: | :---: |
+| 1 | FDUSD/USDT DOGE/FDUSD DOGE/USDT | DOGE/USDT (+7)| BTC/FDUSD |
+| 2 | DOGE/USDT DOGE/FDUSD FDUSD/USDT | FDUSD/USDT (+5)| BTC/USDT |
+| 3 | DOGE/USDT DOGE/EUR EUR/USDT | DOGE/FDUSD (+8)| ETH/USDT |
+| 4 | DOGE/USDT SHIB/DOGE SHIB/USDT | USDT/TRY (+30)| ETH/FDUSD |
+| 5 | FDUSD/USDT FLOKI/FDUSD FLOKI/USDT | EUR/USDT | USDC/USDT |
+| 6 | DOGE/USDT DOGE/TUSD TUSD/USDT | SHIB/USDT (+3)| SOL/USDT |
+| 7 | TUSD/USDT DOGE/TUSD DOGE/USDT | TUSD/USDT (+300)| FDUSD/USDT |
+| 8 | EURU/SDT DOGE/EUR DOGE/USDT | DOGE/EUR (+417)| DOGE/USDT |
+| 9 | USDT/TRY DOGE/TRY DOGE/USDT | SHIB/DOGE (+475)| SHIB/USDT |
+| 10 | SHIB/USDT SHIB/DOGE DOGE/USDT | BTC/USDT (-8)| PEPE/USDT |
+| 11 | DOGE/USDT DOGE/BRL USDT/BRL | DOGE/TUSD (+589)| DOGE/FDUSD |
+| 12 | DOGE/USDT DOGE/TRY USDT/TRY | FLOKI/USDT (+12)| BNB/FDUSD |
+| 13 | USDT/TRY LPT/TRY LPT/USDT | FLOKI/FDUSD (+555)| SOL/FDUSD |
+| 14 | FDUSD/USDT PEPE/FDUSD PEPE/USDT | DOGE/TRY (+266)| BNB/USDT |
+| 15 | USDT/TRY AMP/TRY AMP/USDT | USDC/USDT (-10)| XRP/USDT |
+| 16 | SOL/USDT SOL/FDUSD FDUSD/USDT | USDT/BRL (+145)| WIF/USDT |
+| 17 | BTC/USDT BTC/FDUSD FDUSD/USDT | DOGE/BRL (+593)| BOME/USDT| 
+| 18 | APT/USDT APT/FDUSD FDUSD/USDT | ETH/USDT (-15)| NEAR/USDT |
+| 19 | FDUSD/USDT BTC/FDUSD BTC/USDT | LPT/USDT (+154)| ICP/USDT |
+| 20 | USDT/TRY WAVES/TRY WAVES/USDT | LPT/TRY (+690)| FET/USDT |
