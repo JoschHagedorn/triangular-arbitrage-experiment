@@ -16,20 +16,20 @@ This project is for educational and research purposes only. Any trading decision
 
 ## Triangular Arbitrage
 
-Triangular arbitrage is a trading strategy that exploits price discrepancies between three different assets in the foreign exchange or cryptocurrency markets to generate profit. The basic concept behind triangular arbitrage is the principle of a "no-risk" opportunity due to pricing inefficiencies. Traders monitor exchange rates of three currency pairs that are related, such as USD/EUR, EUR/GBP, and GBP/USD in the forex market, or BTC/ETH, ETH/LTC, and LTC/BTC in the cryptocurrency market. If the exchange rates do not align according to the theoretical exchange rate calculated from the three pairs, an arbitrage opportunity is detected. The trader executes a series of trades to exploit the price discrepancy, starting with one currency, converting it to another, and then back to the original currency, ending up with more of the original currency than they started with. By the end of the series of trades, the trader will have made a profit due to the pricing inefficiency, assuming the trades are executed quickly enough to capitalize on the opportunity before market conditions change.
+Triangular arbitrage is a trading strategy that exploits price discrepancies between three different assets in the foreign exchange or cryptocurrency markets to generate profit. The basic concept behind triangular arbitrage is the principle of a "risk-free" opportunity due to pricing inefficiencies. Traders monitor exchange rates of three currency pairs that are related, such as USD/EUR, EUR/GBP, and GBP/USD in the forex market, or BTC/ETH, ETH/LTC, and LTC/BTC in the cryptocurrency market. If the exchange rates do not align with the theoretical exchange rate calculated from the three pairs, an arbitrage opportunity is detected. The trader executes a series of trades to exploit the price discrepancy, starting with one currency, converting it to another, and then back to the original currency, ending up with more of the original currency than they started with. By the end of the series of trades, the trader will have made a profit due to the pricing inefficiency, assuming the trades are executed quickly enough to capitalize on the opportunity before market conditions change.
 
 Triangular arbitrage helps to maintain efficient pricing in the market by quickly correcting pricing discrepancies.
 
 ## Definitions
 
-This section provides important definitions and assumptions made in this project.
+This section provides important definitions and assumptions used in this project.
 
 **Symbol:** \
 In the context of this project, a symbol refers to a trading pair on the Binance exchange, consisting of two (crypto-) currencies (e.g., BTC/ETH, LTC/BTC). Each symbol represents the exchange rate between the two (crypto-) currencies in the pair.
 
 
 **Triangular arbitrage chain or chain:** \
-A triangular arbitrage chain, or simply a "chain," refers to a sequence of three symbols that can form a triangular arbitrage opportunity. For example, if we have symbols A/B, B/C, and C/A, this forms a triangular arbitrage chain. Executing a triangular arbitrage chain, starting with a base asset (e.g., currency A), involves the following steps:
+A triangular arbitrage chain, or 'chain' for short, refers to a sequence of three symbols that can form a triangular arbitrage opportunity. For example, if we have symbols A/B, B/C, and C/A, this forms a triangular arbitrage chain. Executing a triangular arbitrage chain, starting with a base asset (e.g., currency A), involves the following steps:
 1. Buy currency B using the A/B symbol.
 2. Buy currency C using the B/C symbol.
 3. Sell currency C for currency A using the C/A symbol.
@@ -44,7 +44,7 @@ The base asset is the starting and ending currency in a triangular arbitrage cha
 The base asset quantity is the amount of the base asset that is used for the execution of a triangular arbitrage chain. It plays an important role in determining the duration of an opportunity. When an opportunity begins, it is the moment when the limit prices become immediately executable, based on the best bid/ask prices in the limit order book and their quantities. The base asset quantity defines the minimum quantity of the base asset required for the opportunity to be executable.
 
 **Profit:** \
-The profit of a chain is the relative difference between the base asset quantity before and after the execution of a chain, expressed as a percentage. 
+The profit of a chain is the percentage difference between the base asset quantity before and after the chain's execution. 
 The formula for calculating profit is: 
 $$\text{Profit} ( \\% ) = \left( \frac{B_{\text{after}} - B_{\text{before}} - \text{Fees}}{B_{\text{before}}} \right) \times 100$$
 
@@ -76,9 +76,9 @@ The data discussed in this sections was collected using a server that was strate
 
 The data was collected during a roughly 24 hour period between March 13th, 2024 and March 14th, 2024. As a single base asset Tether (USDT) was used. The chosen quantity was 50 USDT.
 
-During this period more than 250 Thousand arbitrage opportunites were recorded. The mean duration of those opportunities was about 0.44 seconds and the median duration was about 0.057 seconds. The longest recorded opportunity lasted about 73 seconds while the shortest lasted just about 76 micro seconds. The mean profit of the recorded opportunities was about 0.19% and the median profit was about 0.11%. The highest recorded profit was about 29% and the smallest just about 14 × 10⁻¹⁵%.
+During this period more than 250 Thousand arbitrage opportunities were recorded. The mean duration of these opportunities was approximately 0.44 seconds, with a median duration of about 0.057 seconds. The longest recorded opportunity lasted about 73 seconds while the shortest lasted just about 76 microseconds. The mean profit of the recorded opportunities was about 0.19% and the median profit was about 0.11%. The highest recorded profit was approximately 29%, while the smallest was about 14 × 10⁻¹⁵%.
 
-Figures 1 - 4 visualize the relationship between the duration of triangular arbitrage opportunities and the profits they yield, measured in percentage. Each dot represents an arbitrage opportunity, plotted with the duration on the x-axis (in seconds) and the profit on the y-axis.
+Figures 1 - 4 visualize the relationship between the duration of triangular arbitrage opportunities and the profits they yield, measured as a percentage. Each dot represents an arbitrage opportunity, plotted with the duration on the x-axis (in seconds) and the profit on the y-axis.
 
 | Raw | Outliers removed |
 | :---: | :---: |
@@ -91,13 +91,13 @@ Figure 5 presents a histogram that illustrates the distribution of triangular ar
 
 Figure 6, similarly, displays a histogram categorizing the number of triangular arbitrage opportunities among the top 20 symbols and aggregates the rest under the label "21-1147," representing the remaining symbols. The histogram ranks these symbols based on the frequency of arbitrage opportunities identified, offering insight into which currency pairs presented the most potential for profitable triangular arbitrage transactions. Given the distribution of opportunities across the chains it is no surprise that specific symbols yielded far more freqent opportunities for triangular arbitrage than other symbols.
 
-Figures 5 and 6 help validating the collected data. If there was a systematic error in the way the triangular arbitrage opportunities are measured, one would expect the distribution of chains and symbols among the opportunities to be more or less random. Considering the histograms that is clearly not the case. Looking at the table listing the chains and symbols with the most opportunities  
-
 | Figure 5 | Figure 6 |
 | :---: | :---: |
-| ![Figure 1](Images/TopChains.png) | ![Figure 2](Images/TopSymbols.png) |
+| ![Figure 5](Images/TopChains.png) | ![Figure 6](Images/TopSymbols.png) |
 
-| | Chains with most opportunities | Symbols with most opportunities (Rank compared to volume| Symbols with highest volume |
+Figures 5 and 6 serve to validate the collected data. If there were a systematic error in the way the triangular arbitrage opportunities are measured, one would expect the distribution of chains and symbols among the opportunities to be more or less random or mainly influenced by volume. However, the histograms show clear patterns. The table listing the chains and symbols with the most opportunities demonstrates that the top symbols do not align with the list of symbols with the highest volume on the Binance exchange. In fact, several symbols included in the list of symbols with the most opportunities rank very low in the list of symbols ranked by volume.
+
+| | Chains with Most Opportunities | Symbols with Most Opportunities (Rank Compared to Volume) | Symbols with Highest Volume |
 | :---: | :---: | :---: | :---: |
 | 1 | FDUSD/USDT DOGE/FDUSD DOGE/USDT | DOGE/USDT (+7)| BTC/FDUSD |
 | 2 | DOGE/USDT DOGE/FDUSD FDUSD/USDT | FDUSD/USDT (+5)| BTC/USDT |
@@ -119,3 +119,9 @@ Figures 5 and 6 help validating the collected data. If there was a systematic er
 | 18 | APT/USDT APT/FDUSD FDUSD/USDT | ETH/USDT (-15)| NEAR/USDT |
 | 19 | FDUSD/USDT BTC/FDUSD BTC/USDT | LPT/USDT (+154)| ICP/USDT |
 | 20 | USDT/TRY WAVES/TRY WAVES/USDT | LPT/TRY (+690)| FET/USDT |
+
+Figure 7 shows the 5 longest trajectories with an inital profit of over 1%. Each point of a trajectory marks the recalculation of the profitablility of the chain. The calculation is triggered by a change in one of the order books of one of the three symbols involved in a chain. A change can either be that the best prices have changed or that the quantity of the best prices has changed. Using this type of visualisation several insights can be gained. For once the points along the trajectories confirm that the program had access to the latest order book data. If the detected arbitrage opportunities were due to networking issues or delays in the execution of the program, then would have to be big gaps in between two consecutive points. Looking at the trajectories it can be confirmed that that is generally not the case. The trajectories do not give any reason to believe that detected arbitrage opportunities are due to networking issues or delays in the execution of the program. Another interesing insight is the fact that before profitable opportunities cease to exist there can be a time where the required prices can still be achieved but there is not enough quantity available at the best price.
+
+| Figure 7 |
+| :---: |
+|![Figure 7](Images/Profit_Trajectories.png)|
