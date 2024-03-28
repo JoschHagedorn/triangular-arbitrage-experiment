@@ -3,7 +3,7 @@
 Triangular arbitrage is a trading strategy that exploits price discrepancies between three different (crypto-) currencies to generate profit. This project focuses on exploring triangular arbitrage opportunities on Binance, one of the largest cryptocurrency exchanges.
 
 **Objective:** \
-The goal of this project is to analyze real-time data from the Binance exchange to identify and understand patterns in triangular arbitrage opportunities. This public version of the project has the trade execution logic removed and instead focuses on the collection and analysis of data. It serves as a proof of concept for potential trading strategies.
+The goal of this project is to analyze real-time data from the Binance exchange to identify and understand patterns in triangular arbitrage opportunities. This public version of the project has the **trade execution logic removed** and instead focuses on the collection and analysis of data. It serves as a proof of concept for potential trading strategies.
 
 **Disclaimer:** \
 This project is for educational and research purposes only. Any trading decisions should be based on your own analysis and risk tolerance.
@@ -132,10 +132,68 @@ Something interesting happens with the blue trajectory: several times, its profi
 | :---: |
 |![Figure 7](Images/Profit_Trajectories.png)|
 
+Figure 8 shows the relationships between multiple variables collected every minute during the data collection period. The variables are the number of arbitrage opportunities (arbitrage_num), the average duration of these opportunities (duration), the average profit of these opportunities (profit), an estimate of the overall volume on the exchange (volume), and an estimate of the exchange's volatility (volatility).
+
+Here’s a breakdown of what each element of the pair plot represents:
+
+Histograms: The diagonal shows histograms for each variable, which represent the distribution of each individual variable. From these histograms, the following can be deduced:
+- arbitrage_num: Most of the time, there were few arbitrage opportunities, with a large number of occurrences where the number of opportunities was near zero.
+- duration: The histogram suggests that the majority of arbitrage opportunities had a very short duration.
+- profit: This histogram indicates that the profit was generally low for most arbitrage opportunities.
+- volatility: The distribution seems to be right-skewed, meaning lower volatility occurs more frequently than higher volatility.
+- volume: The volume histogram also appears to be right-skewed, suggesting that lower trading volumes are more common.
+  
+Scatterplots: The off-diagonal elements are scatterplots that show the relationship between pairs of variables. Each point on these scatterplots represents a minute in the observation period. From these scatterplots, some inferences can be drawn:
+- arbitrage_num vs. duration: There doesn't appear to be a strong relationship between the number of opportunities and their average duration.
+- arbitrage_num vs. profit: Again, there seems to be little to no correlation; more opportunities don't necessarily mean higher profits.
+- arbitrage_num vs. volatility: There is no apparent strong relationship, although there are some hints of clustering at lower numbers of arbitrage opportunities and lower volatility levels.
+- arbitrage_num vs. volume: There seems to be a slight increase in the number of opportunities with higher volume, which could make sense as more trading might lead to more opportunities for arbitrage.
+- duration vs. profit: There is no clear pattern suggesting that longer durations lead to higher profits.
+- duration vs. volatility and volume: No clear relationships are discernible.
+- profit vs. volatility: No strong relationship can be discerned.
+- profit vs. volume: No strong relationship can be discerned.
+- volatility vs. volume: There is a noticeable trend where higher volumes correlate with higher volatility, which is a common characteristic of markets as more trading can lead to larger price swings.
+
+In conclusion, while some expected correlations (like volume and volatility) are visible, there doesn't appear to be a strong correlation between the number of arbitrage opportunities and the other variables, such as profit or duration. This could indicate that the arbitrage opportunities on Binance are not significantly influenced by the overall market conditions represented by volume and volatility, or that the nature of arbitrage is more dependent on fleeting discrepancies across different trading pairs or exchanges rather than on broader market trends.
+
 | Figure 8 |
 | :---: |
 |![Figure 8](Images/Pairplot.png)|
 
+The matrix in figure 9 shows the Pearson correlation coefficients between the variables:
+
+- arbitrage_num (Number of Arbitrage Opportunities): Shows a mild positive correlation with volume (0.36) and volatility (0.30), suggesting that more arbitrage opportunities are slightly more likely to occur in periods of higher volume and volatility, which could indicate more market movement and mispricing opportunities.
+Shows very low correlation with profit (0.07) and duration (0.10), implying that the number of opportunities doesn't necessarily predict how profitable they are or how long they last.
+- duration (Average Duration of Opportunities): Has a moderate positive correlation with volume (0.33) and a weak positive correlation with volatility (0.38), which may indicate that opportunities last longer in more volatile and busy markets. Shows almost no correlation with profit (0.01), suggesting that the duration of an arbitrage opportunity is not a good predictor of its profitability.
+- profit (Average Profit from Opportunities): Has an almost non-existent correlation with volume (0.02) and volatility (0.02), indicating that profit is not significantly affected by these market conditions.
+- volatility: Shows a very high positive correlation with volume (0.90), which is expected as higher trading volumes can lead to more price movement and hence higher volatility.
+
+This matrix in figure 10 shows the Spearman rank correlation coefficients, which measure the monotonic relationship between the variables:
+
+- arbitrage_num: Has a very strong positive correlation with duration (0.87), suggesting that when there are more opportunities, they tend to last longer. This is a departure from what the Pearson coefficient suggested, possibly indicating a non-linear but monotonic relationship. Shows a moderate positive correlation with volume (0.66) and volatility (0.65), stronger than the Pearson correlation, hinting that these relationships might be more about the ranking order than linear. Has a moderate positive correlation with profit (0.58), indicating that when looking at the ranked data, more opportunities tend to coincide with periods of higher profitability.
+- duration: Shows a strong positive correlation with volume (0.66) and a moderate one with volatility (0.66), which is consistent with the Pearson results but shows a stronger monotonic relationship.
+Has a moderate correlation with profit (0.47), suggesting a monotonic relationship where longer durations are somewhat associated with higher profits when ranking the variables.
+- profit: Shows weak to moderate positive correlations with volume (0.27) and volatility (0.28), which suggests that profitable opportunities might be slightly more likely to occur when the market is more active or volatile, according to the ranks.
+- volatility: Shows a very strong positive correlation with volume (0.86), which is consistent with the Pearson results and typical market behavior.
+  
+In summary, while the Pearson correlation coefficients measure linear relationships and showed weaker connections between the number of arbitrage opportunities, profit, and duration, the Spearman rank correlation coefficients reveal stronger monotonic relationships. This suggests that the relationships between these variables may not be linear, but there is a consistent trend when the variables are ranked by value. The strength of the correlations is generally higher in the Spearman matrix, especially between arbitrage opportunities and duration, as well as arbitrage opportunities and profit, indicating that more arbitrage opportunities tend to occur alongside longer durations and higher profits when considering their ranked order.
+
 | Figure 9 | Figure 10|
 | :---: | :---: |
 |![Figure 9](Images/Correlation.png)| ![Figure 10](Images/SpearmanCorrelation.png) |
+
+Figure 11 displays the autocorrelation of five the variables: volume, duration, the number of arbitrage opportunities (arbitrage_num), profit, and volatility, each as a function of lag in minutes, up to 60 minutes. Autocorrelation measures how a variable correlates with itself at different lags, which can help identify patterns or cycles in time series data.
+
+- Autocorrelation of volume: The autocorrelation starts at 1 and exhibits a decreasing trend as the lag increases, with periodic peaks indicating a possible cyclical pattern in trading volume. High autocorrelation at short lags suggests past values of volume are good predictors of future values in the short term.
+- Autocorrelation of duration: The autocorrelation starts at 1 at lag 0 and drops to around zero immediately, remaining close to zero for all other lags. This indicates that the duration of arbitrage opportunities is not dependent on the duration of the previous opportunities; each opportunity's duration is essentially random or independent of the last.
+- Autocorrelation of arbitrage_num: The autocorrelation starts at 1 and drops off to be consistently low and around zero for all other lags, indicating that the number of arbitrage opportunities does not show significant self-similarity over time.
+- Autocorrelation of profit: Profit shows a significant positive autocorrelation at lag 0, which quickly drops off and then oscillates around zero. This pattern suggests that while one minute's profit can predict the next minute's profit to some extent, the predictive power fades quickly, and the cyclical pattern is weak.
+- Autocorrelation of volatility: Similar to volume, volatility's autocorrelation starts off strong and diminishes, with a slight periodic behaviour. The oscillating nature of the autocorrelation could suggest a cyclical pattern, which might correspond to regular market events or trading sessions.
+
+From this autocorrelation analysis, it can be gathered that volume and volatility show some degree of time-based cyclical patterns over the course of an hour, while the duration and number of arbitrage opportunities do not show any significant autocorrelation, suggesting randomness or lack of pattern. Profit, while initially showing some predictability, does not maintain autocorrelation over the longer term within the hour, indicating that other factors may influence profit on a minute-by-minute basis.
+
+This time-based analysis is important for understanding the temporal dynamics of the market and can help in optimizing trading strategies and prediction models.
+
+| Figure 11 |
+| :---: |
+|![Figure 11](Images/Autocorrelation.png)|
