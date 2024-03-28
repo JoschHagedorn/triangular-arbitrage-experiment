@@ -120,8 +120,22 @@ Figures 5 and 6 serve to validate the collected data. If there were a systematic
 | 19 | FDUSD/USDT BTC/FDUSD BTC/USDT | LPT/USDT (+154)| ICP/USDT |
 | 20 | USDT/TRY WAVES/TRY WAVES/USDT | LPT/TRY (+690)| FET/USDT |
 
-Figure 7 shows the 5 longest trajectories with an inital profit of over 1%. Each point of a trajectory marks the recalculation of the profitablility of the chain. The calculation is triggered by a change in one of the order books of one of the three symbols involved in a chain. A change can either be that the best prices have changed or that the quantity of the best prices has changed. Using this type of visualisation several insights can be gained. For once the points along the trajectories confirm that the program had access to the latest order book data. If the detected arbitrage opportunities were due to networking issues or delays in the execution of the program, then would have to be big gaps in between two consecutive points. Looking at the trajectories it can be confirmed that that is generally not the case. The trajectories do not give any reason to believe that detected arbitrage opportunities are due to networking issues or delays in the execution of the program. Another interesing insight is the fact that before profitable opportunities cease to exist there can be a time where the required prices can still be achieved but there is not enough quantity available at the best price.
+Figure 7 shows the five longest trajectories with an initial profit of over 1%. Each point on a trajectory represents the recalculation of the profitability of the chain. This calculation is triggered by a change in one of the order books of the three symbols involved in a chain. A change can be either a shift in the best prices or a variation in the quantity at the best prices.
+
+Using this type of visualization, several insights can be gained. Firstly, the points along the trajectories confirm that the program had access to the latest order book data. If the detected arbitrage opportunities were due to networking issues or delays in the execution of the program, there would be significant gaps between two consecutive points. However, the trajectories generally do not exhibit such gaps, indicating that the detected arbitrage opportunities are not due to networking issues or delays in the execution of the program.
+
+Another interesting insight is that before profitable opportunities cease to exist, there can be a period where the required prices can still be achieved, but there is not enough quantity available at the best price. In the plot, this is evident when the trajectory drops to zero. Using limit orders, placed orders to execute a chain might not completely fill, and market orders might experience slippage. For example, the purple trajectory can only be immediately executed at the desired prices for its first four seconds, even though that particular opportunity lasts close to 10 seconds.
+
+Something interesting happens with the blue trajectory: several times, its profit drops to zero before returning to its starting profit. This indicates that during those times, the quantity at the best prices is not sufficient. This can occur when the liquidity at a certain price level in an order book drops below the required amount and then gets refilled.
 
 | Figure 7 |
 | :---: |
 |![Figure 7](Images/Profit_Trajectories.png)|
+
+| Figure 8 |
+| :---: |
+|![Figure 8](Images/Pairplot.png)|
+
+| Figure 9 | Figure 10|
+| :---: | :---: |
+|![Figure 9](Images/Correlation.png)| ![Figure 10](Images/SpearmanCorrelation.png) |
