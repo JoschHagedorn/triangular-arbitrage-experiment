@@ -13,6 +13,7 @@ This project is for educational and research purposes only. Any trading decision
 - [Definitions](#definitions)
 - [Features](#features)
 - [Data Analysis](#data-analysis)
+- [Assumptions](#assumptions)
 
 ## Triangular Arbitrage
 
@@ -22,7 +23,7 @@ Triangular arbitrage helps to maintain efficient pricing in the market by quickl
 
 ## Definitions
 
-This section provides important definitions and assumptions used in this project.
+This section provides important definitions used in this project.
 
 **Symbol:** \
 In the context of this project, a symbol refers to a trading pair on the Binance exchange, consisting of two (crypto-) currencies (e.g., BTC/ETH, LTC/BTC). Each symbol represents the exchange rate between the two (crypto-) currencies in the pair.
@@ -197,3 +198,12 @@ This time-based analysis is important for understanding the temporal dynamics of
 | Figure 11 |
 | :---: |
 |![Figure 11](Images/Autocorrelation.png)|
+
+## Assumptions
+
+In conducting this research, certain assumptions have been made to ensure the integrity and validity of the results. These assumptions are critical to the interpretation of the findings and the potential application of the strategies explored.
+
+- Computational Time Negligibility: It is assumed that the time spent on computational processes, such as the profit calculation, is negligible. This assumption is vital to ensure that the incoming messages from the WebSockets are time-stamped correctly.
+- Consistent Signal Transmission Time: The research assumes that the time taken for signals to be transmitted from the Binance server to the server running the program via the WebSocket connection is consistent. This consistency is crucial for the accurate time-stamping of incoming messages. Although the absolute time of signal transmission is not a primary concern, its consistency is essential to maintain the reliability of the timing strategies employed in this study.
+  
+These assumptions are foundational to the research methodology and are considered to be reasonable within the context of this study. Any deviations from these assumptions could impact the results and their interpretation. Therefore, it is important for users and reviewers of this research to be aware of these assumptions and consider them when evaluating the findings and their applicability to real-world trading scenarios.
